@@ -1,38 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="header">
-        <div class="container">
+      <div class="container">
         <nav>
-        <img src="images/logo.png" class="logo"  >
-        <ul>
+          <img src="images/logo.png" class="logo" />
+          <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About </a></li>
             <li><a href="#">Projects</a></li>
             <li><a href="#">Contact Me </a></li>
-        </ul>
-        
+          </ul>
         </nav>
-        
+
         <div class="header-text">
- <p>  < B.tech Graduate  > </p>
-<h1>Hi, I'm <span>Rishiraj</span>  <br>                     <!--span tag used to makeup part of an tag-->
-             from INDIA</h1>
-
+          <p>< B.tech Graduate ></p>
+          <h1>
+            Hi, I'm <span>Rishiraj</span> <br />
+            <!--span tag used to makeup part of an tag-->
+            from INDIA
+          </h1>
         </div>
-        </div>
-
       </div>
+    </div>
 
+    <!--about me section-->
 
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="/images/img2.jpg" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About me</h1>
+            <p>
+              Computer Science graduate seeking an entry level position in the
+              engineering industry to pursue a career as Software Developer .
+            </p>
 
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('Experience')">Experience</p>
+              <p class="tab-links" onclick="opentab('Education')">Education</p>
+              <p class="tab-links" onclick="opentab('Certification')">Certifications</p>
+            </div>
+            <div class="tab-contents active-tab" id="Experience">
+              <ul>
+              
+                <li>
+                  <span>Celebel Summer Intern</span><br />
+                  Gathering and evaluating User Requirement <br />Designed UI
+                  for bicyle Application using<br />
+                  software like Figma, AdobeXd, Photoshop etc.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="Education">
+              <ul>
+                <li>
+                  <span>2019 - Current</span><br />Computer Science Engineering
+                  <br />Poornima Group Of Colleges<br />
+                  Aggregate Sgpa 9.2
+                </li>
+              </ul>
 
-      <div id="about"></div>
-</body>
+              <ul>
+                <li>
+                  <span>2017-2019 </span><br />
+                  Higher Secondary with PCM <br />Aggregate 83%
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <span>2015-2017 </span><br />
+                  Secondary School <br />Aggregate 9.6 Cgpa
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="Certification">
+              <ul>
+                <li>
+                  <span> Google </span>
+                  <br /><a
+                    href="https://www.qwiklabs.com/public_profiles/112173b1-49e9-449c-94c8-065f39e49f12/badges/1611305?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+                    ><u>Google Cloud Essentials</u></a
+                  >
+                  <br />
+                  Issued: Dec 2021 - Never expires
+                  <br />
+                  Credential ID: 1611305
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <span> Coursera </span>
+                  <br /><a
+                    href="https://www.coursera.org/account/accomplishments/certificate/ZMYCBTLDPFN9"
+                    ><u>Blockchain Basics</u></a
+                  >
+                  <br />
+                  Issued: Sep 2021 - Never expires
+                  <br />
+                  Credential ID: ZMYCBTLDPFN9
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <span> Microsoft </span>
+                  <br /><a
+                    href="https://www.credly.com/badges/437d1c7a-e6b1-4d31-8b49-0f68cfde6f7c/public_url"
+                    ><u>Azure AI fundamentals</u></a
+                  >
+                  <br />
+                  Issued: May 2022
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--defining the tab link and tabname to be used in function below in javascript code-->
+    <!--for hiding the elements like eduaction and certification when on experience tab-->
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+         document.getElementById(tabname).classList.add("active-tab");
+      } 
+    </script>
+  </body>
 </html>
