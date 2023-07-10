@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e6fe553942.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
     <div id="header">
       <div class="container">
@@ -46,13 +51,16 @@
             </p>
 
             <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('Experience')">Experience</p>
+              <p class="tab-links active-link" onclick="opentab('Experience')">
+                Experience
+              </p>
               <p class="tab-links" onclick="opentab('Education')">Education</p>
-              <p class="tab-links" onclick="opentab('Certification')">Certifications</p>
+              <p class="tab-links" onclick="opentab('Certification')">
+                Certifications
+              </p>
             </div>
             <div class="tab-contents active-tab" id="Experience">
               <ul>
-              
                 <li>
                   <span>Celebel Summer Intern</span><br />
                   Gathering and evaluating User Requirement <br />Designed UI
@@ -130,6 +138,109 @@
       </div>
     </div>
 
+    <!---skills-->
+
+    <div id="skills">
+      <div class="container">
+        <h1 class="sub-title">Skills</h1>
+        <div class="skills-list">
+          <div>
+            <i class="fa-solid fa-code" style="color: #ffffff"></i>
+            <h2>Programming Language</h2>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Solidity</li>
+            <li>C++</li>
+          </div>
+          <div>
+            <i class="fa-brands fa-github" style="color: #ffffff"></i>
+            <h2>FrameWork/ Tools</h2>
+
+            <li>MySql</li>
+            <li>Git</li>
+            <li>Google Cloud</li>
+            <li>Android Studio</li>
+            <li>Ethereum Remix</li>
+            <li>Jira | Selenium</li>
+            <li>chatGPT | MidJourney</li>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-palette" style="color: #ffffff"></i>
+            <h2>Designing</h2>
+            <li>Photoshop</li>
+            <li>Canva</li>
+            <li>Figma</li>
+            <li>Premiere Pro</li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--projects-->
+
+    <div id="projects">
+      <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="work-list">
+
+
+          <div class="work">
+            <img src="/images/work-3.png">
+            <div class="layer">
+              <h3>Inscription detection</h3>
+              <p>
+                Trying to built a mechanism to detect inscriptions from
+                 ancient monuments and converting them to devanagari script using machine learning
+              </p>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+
+          <div class="work">
+            <img src="/images/work-2.png" />
+            <div class="layer">
+              <h3> Project VANI</h3>
+              <p>
+                Worked on an offline portal for scholarship transfer in remote areas that 
+                can be availed using a simple feature phone developed under Smart India Hackathon 2022.
+              </p>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          
+          <div class="work">
+            <img src="/images/work-1.png" />
+            <div class="layer">
+              <h3>ERC 20 Token</h3>
+            <p>
+              ERC Token Based on Solidity and Ethereum testnet build using Eth Remix Deployed on Uniswap Testnet
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          </div>
+
+
+
+          <div class="work">
+            <img src="/images/work-1.png "" />
+            <div class="layer">
+              <h3>TextUtility</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et atque
+              ullam repudiandae eius dolorum magnam amet.
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
     <!--defining the tab link and tabname to be used in function below in javascript code-->
     <!--for hiding the elements like eduaction and certification when on experience tab-->
 
@@ -146,8 +257,8 @@
         }
 
         event.currentTarget.classList.add("active-link");
-         document.getElementById(tabname).classList.add("active-tab");
-      } 
+        document.getElementById(tabname).classList.add("active-tab");
+      }
     </script>
   </body>
 </html>
