@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script
       src="https://kit.fontawesome.com/e6fe553942.js"
       crossorigin="anonymous"
@@ -15,13 +16,16 @@
     <div id="header">
       <div class="container">
         <nav>
-          <img src="images/logo.png" class="logo" />
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About </a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact Me </a></li>
+          <img src="images/P.folio.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About </a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me </a></li>
+            <i class ="fas fa-times" onclick="closemenu()"></i>
           </ul>
+          <i class ="fas fa-bars" onclick="openmenu()"></i>
+
         </nav>
 
         <div class="header-text">
@@ -98,7 +102,7 @@
                   <span> Google </span>
                   <br /><a
                     href="https://www.qwiklabs.com/public_profiles/112173b1-49e9-449c-94c8-065f39e49f12/badges/1611305?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
-                    ><u>Google Cloud Essentials</u></a
+                    >Google Cloud Essentials <i class="fa-solid fa-arrow-up-right-from-square" style="color: #8fe1ff;"></i></a
                   >
                   <br />
                   Issued: Dec 2021 - Never expires
@@ -112,7 +116,7 @@
                   <span> Coursera </span>
                   <br /><a
                     href="https://www.coursera.org/account/accomplishments/certificate/ZMYCBTLDPFN9"
-                    ><u>Blockchain Basics</u></a
+                    >Blockchain Basics <i class="fa-solid fa-arrow-up-right-from-square" style="color: #8fe1ff;"></i></a
                   >
                   <br />
                   Issued: Sep 2021 - Never expires
@@ -125,9 +129,7 @@
                 <li>
                   <span> Microsoft </span>
                   <br /><a
-                    href="https://www.credly.com/badges/437d1c7a-e6b1-4d31-8b49-0f68cfde6f7c/public_url"
-                    ><u>Azure AI fundamentals</u></a
-                  >
+                    href="https://www.credly.com/badges/437d1c7a-e6b1-4d31-8b49-0f68cfde6f7c/public_url">Azure AI fundamentals  <i class="fa-solid fa-arrow-up-right-from-square" style="color: #8fe1ff;"></i></a>
                   <br />
                   Issued: May 2022
                 </li>
@@ -193,7 +195,7 @@
                 Trying to built a mechanism to detect inscriptions from
                  ancient monuments and converting them to devanagari script using machine learning
               </p>
-              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="https://colab.research.google.com/drive/100izQVIYwv0nJJ5hMdmyFuQ6Li3sEy9T?usp=sharing"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
 
@@ -241,6 +243,49 @@
       </div>
     </div>
 
+
+    <!--#contact me -->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contactleftcol">
+<h1 class="sub-title">Contact me</h1>
+<p><i class="fa-solid fa-envelope"  ></i>rishiraj.singh.01@outlook.com</p>
+<p><i class="fa-solid fa-user" ></i>6375676203</p>
+<div class="Social-media">
+  <a href=""><i class="fa-brands fa-facebook"></i></a>
+  <a href=""><i class="fa-brands fa-github"></i></a>
+  <a href=""><i class="fa-brands fa-instagram"></i></a>
+  <a href=""><i class="fa-brands fa-linkedin"></i></a>
+</div>
+<a href="images/resume_cv.pdf" download class="Button">Download resume</a>
+      </div>
+
+
+<div class="contactrightcol">
+  <form name="submit-to-google-sheet"> 
+<input type="text" name="Name" placeholder="Your Name " required>
+<input type="email" name="Email" placeholder="Your email" required>
+<textarea name="Message" rows ="6" placeholder="Your Message" required></textarea>
+<Button type="submit" class="Button btn2">Submit</Button>
+</form>
+<span id="msg"> </span>
+</div>
+
+    </div>
+  </div>
+
+<div class="copyright"> 
+<!--copyright   -->
+<p>© Made with <i class="fa-solid fa-heart" style="color: #ff0000;"> </i> by Rishiraj_Singh_Rathore</p>
+</div>
+
+</div>
+
+
+
+
+
     <!--defining the tab link and tabname to be used in function below in javascript code-->
     <!--for hiding the elements like eduaction and certification when on experience tab-->
 
@@ -260,5 +305,37 @@
         document.getElementById(tabname).classList.add("active-tab");
       }
     </script>
+
+<!--side menu -->
+<script>
+var sidemenu =document.getElementById("sidemenu")
+function openMenu() {
+            sidemenu.classList.add("show_menu");
+            sidemenu.classList.remove("hide_menu");
+           }
+           function closeMenu() {
+            sidemenu.classList.add("hide_menu");
+            sidemenu.classList.remove("show_menu");
+           }
+
+
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwxplQ0AEoWTrXTQ0E9DGU67Dh40Be8R13rxHIB5zka_mUoYrRWM67CmelwpXkIT0Je/exec'
+  const form = document.forms['submit-to-google-sheet']
+const msg =document.getElementById("msg");
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>  {
+        msg.innerHTML ="Message sent Successfully"
+        setTimeout(function(){msg.innerHTML =""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
   </body>
 </html>
